@@ -5,7 +5,6 @@ go 1.25
 require (
 	github.com/fatih/color v1.17.0
 	github.com/pbnjay/memory v0.0.0-20210728143218-7b4eea64cf58
-	github.com/timescale/timescaledb-tune v0.18.1
 )
 
 require (
