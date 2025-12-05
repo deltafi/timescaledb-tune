@@ -15,8 +15,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/timescale/timescaledb-tune/pkg/pgtune"
-	"github.com/timescale/timescaledb-tune/pkg/tstune"
+	"github.com/deltafi/timescaledb-tune/pkg/pgtune"
+	"github.com/deltafi/timescaledb-tune/pkg/tstune"
 )
 
 const (
