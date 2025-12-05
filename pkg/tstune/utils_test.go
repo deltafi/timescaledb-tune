@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/timescale/timescaledb-tune/pkg/pgutils"
+	"github.com/deltafi/timescaledb-tune/pkg/pgutils"
 )
 
 func TestFileExists(t *testing.T) {

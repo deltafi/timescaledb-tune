@@ -4,7 +4,7 @@ import (
 	"math"
 	"runtime"
 
-	"github.com/timescale/timescaledb-tune/internal/parse"
+	"github.com/deltafi/timescaledb-tune/internal/parse"
 )
 
 // Keys in the conf file that are tuned related to memory

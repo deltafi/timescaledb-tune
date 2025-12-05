@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/timescale/timescaledb-tune/internal/parse"
+	"github.com/deltafi/timescaledb-tune/internal/parse"
 )
 
 const (

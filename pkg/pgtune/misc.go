@@ -5,8 +5,8 @@ import (
 	"math"
 	"runtime"
 
-	"github.com/timescale/timescaledb-tune/internal/parse"
-	"github.com/timescale/timescaledb-tune/pkg/pgutils"
+	"github.com/deltafi/timescaledb-tune/internal/parse"
+	"github.com/deltafi/timescaledb-tune/pkg/pgutils"
 )
 
 // Keys in the conf file that are tunable but not in the other groupings

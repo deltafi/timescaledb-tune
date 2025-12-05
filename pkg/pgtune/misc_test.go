@@ -5,8 +5,8 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/timescale/timescaledb-tune/internal/parse"
-	"github.com/timescale/timescaledb-tune/pkg/pgutils"
+	"github.com/deltafi/timescaledb-tune/internal/parse"
+	"github.com/deltafi/timescaledb-tune/pkg/pgutils"
 )
 
 // memoryToLocks is a mapping of the different memory levels we want tested and

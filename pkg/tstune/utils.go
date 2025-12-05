@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/timescale/timescaledb-tune/pkg/pgutils"
+	"github.com/deltafi/timescaledb-tune/pkg/pgutils"
 )
 
 // ValidPGVersions is a slice representing the major versions of PostgreSQL

@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/timescale/timescaledb-tune/pkg/pgutils"
+	"github.com/deltafi/timescaledb-tune/pkg/pgutils"
 )
 
 // parallelSettingsMatrix stores the test cases for ParallelRecommender along

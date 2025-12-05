@@ -16,8 +16,8 @@ import (
 	"time"
 
 	"github.com/pbnjay/memory"
-	"github.com/timescale/timescaledb-tune/internal/parse"
-	"github.com/timescale/timescaledb-tune/pkg/pgtune"
+	"github.com/deltafi/timescaledb-tune/internal/parse"
+	"github.com/deltafi/timescaledb-tune/pkg/pgtune"
 )
 
 const (

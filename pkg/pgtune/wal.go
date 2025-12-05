@@ -1,7 +1,7 @@
 package pgtune
 
 import (
-	"github.com/timescale/timescaledb-tune/internal/parse"
+	"github.com/deltafi/timescaledb-tune/internal/parse"
 )
 
 // Keys in the conf file that are tuned related to the WAL

@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/timescale/timescaledb-tune/pkg/pgtune"
-	"github.com/timescale/timescaledb-tune/pkg/pgutils"
+	"github.com/deltafi/timescaledb-tune/pkg/pgtune"
+	"github.com/deltafi/timescaledb-tune/pkg/pgutils"
 )
 
 func stringSliceToBytesReader(lines []string) *bytes.Buffer {

@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/timescale/timescaledb-tune/pkg/pgtune"
+	"github.com/deltafi/timescaledb-tune/pkg/pgtune"
 )
 
 // Names of parameters that this tuning tool will add to the conf file.

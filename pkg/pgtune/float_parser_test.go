@@ -3,7 +3,7 @@ package pgtune
 import (
 	"testing"
 
-	"github.com/timescale/timescaledb-tune/internal/parse"
+	"github.com/deltafi/timescaledb-tune/internal/parse"
 )
 
 func TestBytesFloatParserParseFloat(t *testing.T) {

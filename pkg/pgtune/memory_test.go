@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"github.com/timescale/timescaledb-tune/internal/parse"
+	"github.com/deltafi/timescaledb-tune/internal/parse"
 )
 
 // defaultMemoryToBaseVals provides a memory from test memory levels to expected "base"
