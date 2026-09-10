@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"slices"
 	"strings"
 	"testing"
 
@@ -179,10 +180,8 @@ func TestGetConfigFilePath(t *testing.T) {
 	oldOSStatFn := osStatFn
 	for _, c := range cases {
 		osStatFn = func(fn string) (os.FileInfo, error) {
-			for _, s := range c.files {
-				if fn == s {
-					return nil, nil
-				}
+			if slices.Contains(c.files, fn) {
+				return nil, nil
 			}
 			return nil, os.ErrNotExist
 		}

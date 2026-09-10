@@ -58,7 +58,7 @@ var parallelSettingsMatrix = map[int]map[int]map[string]string{
 
 func TestNewParallelRecommender(t *testing.T) {
 	rand.Seed(time.Now().UnixNano())
-	for i := 0; i < 1000000; i++ {
+	for range 1000000 {
 		cpus := rand.Intn(128)
 		// ensure a minimum of background workers
 		workers := rand.Intn(128-MaxBackgroundWorkersDefault+1) + MaxBackgroundWorkersDefault

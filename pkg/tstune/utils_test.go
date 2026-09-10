@@ -90,7 +90,7 @@ func TestDirPathToFile(t *testing.T) {
 func TestIsIn(t *testing.T) {
 	limit := 1000
 	arr := []string{}
-	for i := 0; i < limit; i++ {
+	for i := range limit {
 		arr = append(arr, fmt.Sprintf("str%d", i))
 	}
 

@@ -125,10 +125,8 @@ type PromscaleWALRecommender struct {
 // totalMemory bytes.
 func NewPromscaleWALRecommender(totalMemory, walDiskSize uint64) *PromscaleWALRecommender {
 	return &PromscaleWALRecommender{
-		WALRecommender: WALRecommender{
-			totalMemory: totalMemory,
-			walDiskSize: walDiskSize,
-		},
+		totalMemory: totalMemory,
+		walDiskSize: walDiskSize,
 	}
 }
 

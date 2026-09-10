@@ -80,10 +80,7 @@ func (r *MemoryRecommender) Recommend(key string) string {
 		} else {
 			cpuFactor := math.Round(float64(r.cpus) / 2.0)
 			gigs := float64(r.totalMemory) / float64(parse.Gigabyte)
-			temp := uint64(gigs * (workMemPerGigPerConn * float64(parse.Megabyte) / float64(r.conns)) / cpuFactor)
-			if temp < workMemMin {
-				temp = workMemMin
-			}
+			temp := max(uint64(gigs*(workMemPerGigPerConn*float64(parse.Megabyte)/float64(r.conns))/cpuFactor), workMemMin)
 			val = parse.BytesToPGFormat(temp)
 		}
 

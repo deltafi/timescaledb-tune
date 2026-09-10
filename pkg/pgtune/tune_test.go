@@ -22,7 +22,7 @@ func getDefaultTestSystemConfig(t *testing.T) *SystemConfig {
 }
 
 func TestNewSystemConfig(t *testing.T) {
-	for i := 0; i < 1000; i++ {
+	for i := range 1000 {
 		mem := rand.Uint64()
 		cpus := rand.Intn(32)
 		pgVersion := "10"
@@ -140,7 +140,7 @@ func testSettingGroup(t *testing.T, sg SettingsGroup, profile Profile, cases map
 	t.Helper()
 
 	// No matter how many calls, all calls should return the same
-	for i := 0; i < 1000; i++ {
+	for range 1000 {
 		if got := sg.Label(); got != wantLabel {
 			t.Errorf("incorrect label: got %s want %s", got, wantLabel)
 		}

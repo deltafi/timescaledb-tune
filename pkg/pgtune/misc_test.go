@@ -210,7 +210,7 @@ func TestJIT(t *testing.T) {
 }
 
 func TestNewMiscRecommender(t *testing.T) {
-	for i := 0; i < 1000000; i++ {
+	for range 1000000 {
 		mem := rand.Uint64()
 		conns := rand.Uint64()
 		r := NewMiscRecommender(mem, conns, pgutils.MajorVersion12)

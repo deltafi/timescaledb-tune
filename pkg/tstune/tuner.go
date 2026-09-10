@@ -11,13 +11,14 @@ import (
 	"path/filepath"
 	"regexp"
 	"runtime"
+	"slices"
 	"sort"
 	"strings"
 	"time"
 
-	"github.com/pbnjay/memory"
 	"github.com/deltafi/timescaledb-tune/internal/parse"
 	"github.com/deltafi/timescaledb-tune/pkg/pgtune"
+	"github.com/pbnjay/memory"
 )
 
 const (
@@ -623,12 +624,12 @@ func (t *Tuner) processOurParams() {
 	// that parameter, so we can 1) skip testing other regexes and 2) move
 	// the parameter from findRegexes map to foundLines. Once each has been
 	// found, we can quit searching (or go until the end).
-	for i := len(t.cfs.lines) - 1; i >= 0; i-- {
+	for i, v := range slices.Backward(t.cfs.lines) {
 		if len(findRegexes) == 0 {
 			break
 		}
 		for param, regex := range findRegexes {
-			if found := parseWithRegex(t.cfs.lines[i].content, regex); found != nil {
+			if found := parseWithRegex(v.content, regex); found != nil {
 				foundLines[param] = i
 				delete(findRegexes, param)
 				continue

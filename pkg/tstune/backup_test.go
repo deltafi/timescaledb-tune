@@ -5,7 +5,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"os"
 	"path"
 	"testing"
@@ -163,7 +162,7 @@ func TestGetBackups(t *testing.T) {
 
 func TestFSRestorer(t *testing.T) {
 	fileContents := []byte("oneline\ntwoline\nthreeline\n")
-	tmpfile, err := ioutil.TempFile("", "timescaledb-tune-test")
+	tmpfile, err := os.CreateTemp("", "timescaledb-tune-test")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -176,7 +175,7 @@ func TestFSRestorer(t *testing.T) {
 		t.Fatal(err)
 	}
 	backupPath := tmpfile.Name()
-	tmpfile2, err := ioutil.TempFile("", "timescaledb-tune-test")
+	tmpfile2, err := os.CreateTemp("", "timescaledb-tune-test")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -198,12 +197,12 @@ func TestFSRestorer(t *testing.T) {
 		t.Errorf("unexpected error: %v", err)
 	}
 
-	backupContents, err := ioutil.ReadFile(tmpfile.Name())
+	backupContents, err := os.ReadFile(tmpfile.Name())
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
 
-	destContents, err := ioutil.ReadFile(tmpfile2.Name())
+	destContents, err := os.ReadFile(tmpfile2.Name())
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}

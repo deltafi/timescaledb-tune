@@ -5,6 +5,7 @@ import (
 	"math"
 	"os"
 	"path/filepath"
+	"slices"
 
 	"github.com/deltafi/timescaledb-tune/pkg/pgutils"
 )
@@ -67,12 +68,7 @@ func isCloseEnough(actual, target, fudge float64) bool {
 
 // isIn checks whether a given string s is inside the []string arr.
 func isIn(s string, arr []string) bool {
-	for _, x := range arr {
-		if s == x {
-			return true
-		}
-	}
-	return false
+	return slices.Contains(arr, s)
 }
 
 // validatePGMajorVersion tests whether majorVersion is a major version of

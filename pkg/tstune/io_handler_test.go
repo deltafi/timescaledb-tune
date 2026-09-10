@@ -32,7 +32,7 @@ func TestIOHandlerExit(t *testing.T) {
 	}
 
 	handler := &ioHandler{p, nil, nil, nil}
-	for i := 0; i < 100; i++ {
+	for i := range 100 {
 		handler.exit(i*2, "bye")
 		if got := p.errorCalls; got != uint64(i+1) {
 			t.Errorf("incorrect number of error calls: got %d want %d", got, i+1)
@@ -65,7 +65,7 @@ func TestIOHandlerErrorExit(t *testing.T) {
 	}
 
 	handler := &ioHandler{p, nil, nil, nil}
-	for i := 0; i < 100; i++ {
+	for i := range 100 {
 		handler.errorExit(fmt.Errorf("error %d", i*3))
 		if got := p.errorCalls; got != uint64(i+1) {
 			t.Errorf("incorrect number of error calls: got %d want %d", got, i+1)

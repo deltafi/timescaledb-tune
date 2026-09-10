@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"runtime"
+	"slices"
 
 	"github.com/deltafi/timescaledb-tune/internal/parse"
 	"github.com/deltafi/timescaledb-tune/pkg/pgutils"
@@ -66,10 +67,8 @@ func getMaxConns(totalMemory uint64) uint64 {
 }
 
 func getValueForVersion(currentVersion string, oldVersions []string, oldVersionValue, newVersionValue string) string {
-	for _, ov := range oldVersions {
-		if ov == currentVersion {
-			return oldVersionValue
-		}
+	if slices.Contains(oldVersions, currentVersion) {
+		return oldVersionValue
 	}
 	return newVersionValue
 }

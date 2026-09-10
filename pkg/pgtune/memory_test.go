@@ -140,7 +140,7 @@ func init() {
 }
 
 func TestNewMemoryRecommender(t *testing.T) {
-	for i := 0; i < 1000000; i++ {
+	for range 1000000 {
 		mem := rand.Uint64()
 		cpus := rand.Intn(128)
 		r := NewMemoryRecommender(mem, cpus, MaxConnectionsDefault)
@@ -161,7 +161,7 @@ func TestNewMemoryRecommender(t *testing.T) {
 }
 
 func TestNewPromscaleMemoryRecommender(t *testing.T) {
-	for i := 0; i < 1000000; i++ {
+	for range 1000000 {
 		mem := rand.Uint64()
 		cpus := rand.Intn(128)
 		r := NewPromscaleMemoryRecommender(mem, cpus, MaxConnectionsDefault)

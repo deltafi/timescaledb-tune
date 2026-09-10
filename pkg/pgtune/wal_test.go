@@ -90,7 +90,7 @@ func TestWALSettingsGroup_GetRecommender(t *testing.T) {
 }
 
 func TestNewWALRecommender(t *testing.T) {
-	for i := 0; i < 1000000; i++ {
+	for range 1000000 {
 		mem := rand.Uint64()
 		r := NewWALRecommender(mem, walDiskUnset)
 		if r == nil {
@@ -126,7 +126,7 @@ func TestPromscaleWALRecommenderRecommend(t *testing.T) {
 
 func TestPromscaleWALRecommenderCheckpointTimeout(t *testing.T) {
 	// recommendation for checkpoint timeout should not be impacted by totalMemory or walDiskSize
-	for i := uint64(0); i < 1000000; i++ {
+	for i := range uint64(1000000) {
 		r := NewPromscaleWALRecommender(i, i)
 		if v := r.Recommend(CheckpointTimeoutKey); v != promscaleDefaultCheckpointTimeout {
 			t.Errorf("Expected %s for %s, but got %s", promscaleDefaultCheckpointTimeout, CheckpointTimeoutKey, v)
